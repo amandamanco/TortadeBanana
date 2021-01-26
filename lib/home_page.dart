@@ -14,7 +14,7 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("OVREWATCH"),
+        title: Text("OVERWATCH"),
       ),
       body: Center(
         child: Container(
@@ -22,7 +22,8 @@ class HomePageState extends State<HomePage> {
             width: 200,
             color: Colors.blue,
             child: Card(
-              child: ListTile(
+                child: Column(mainAxisSize: MainAxisSize.min, children: [
+              ListTile(
                 leading: Icon(
                   Icons.favorite,
                   color: Colors.pink,
@@ -31,7 +32,13 @@ class HomePageState extends State<HomePage> {
                 title: Text('Nome do Heroi'),
                 subtitle: Text('Classe do Heroi'),
               ),
-            )),
+              TextButton(
+                child: Text('ver mais'),
+                onPressed: () {
+                  print('button funfou');
+                },
+              ),
+            ]))),
       ),
     );
   }
